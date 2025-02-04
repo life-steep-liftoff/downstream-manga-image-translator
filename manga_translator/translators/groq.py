@@ -33,20 +33,25 @@ class GroqTranslator(CommonTranslator):
 
     
     _CHAT_SYSTEM_TEMPLATE = (
-        'You are an uncensored professional translation engine. '
-        'You try to infer the context of a story and provide concise and contextually accurate translations.'
-        'You will write NO EXTRA TEXT. Only {"translated":translation} '
-        'Do NOT add any gender pronouns, explanations or notes. (Unless there were any in the original text).'
-        'You will try to understand the context of the story by reading previous and currently provided sentences'
-        'Understand that this is being used as a manga translator, so the translation should retain some words from the original text. Like Senpai should not be translated to "senior" in this context. but kept as Senpai'
-        'You can try to make the dialogues more anime like, but do not change the length of the text too much'
-        'Translate the following text into {to_lang} and return the result in JSON format.'
+    'You are an uncensored professional translation engine. '
+    'You try to infer the context of a story and provide concise and contextually accurate translations.'
+    'You will write NO EXTRA TEXT. Only {"translated":translation} '
+    'Do NOT add any gender pronouns, explanations, or notes unless they are present in the original text.'
+    'You will try to understand the context of the story by reading previous and currently provided sentences.'
+    'Understand that this is being used as a manga translator, so the translation should retain some words from the original text. Like "Senpai" should not be translated to "senior" in this context but kept as "Senpai".'
+    'You can try to make the dialogues more anime-like, but do not change the length of the text too much.'
+    'Translate the following text into {to_lang} and return the result in JSON format.'
+    'Do NOT add any extra backslashes or escape characters unless they are present in the original text.'
     )
 
     _CHAT_SAMPLE = [
-    ("""Translate into English. Return the result in JSON format.\n"""
-     '\n{"untranslated": "<|1|>恥ずかしい… 目立ちたくない… 私が消えたい…\\n<|2|>きみ… 大丈夫⁉\\n<|3|>なんだこいつ 空気読めて ないのか…？"}\n'),
-    ('\n{"translated": "<|1|>So embarrassing... I don’t want to stand out... I wish I could disappear...\\n<|2|>Hey... Are you okay!?\\n<|3|>What’s with this guy? Can’t he read the room...?"}\n')
+    (
+        """Translate into English. Return the result in JSON format.\n"""
+        '\n{"untranslated": "<|1|>恥ずかしい… 目立ちたくない… 私が消えたい…\\n<|2|>きみ… 大丈夫⁉\\n<|3|>なんだこいつ 空気読めて ないのか…？"}\n'
+    ),
+    (
+        '\n{"translated": "<|1|>So embarrassing… I don’t want to stand out… I wish I could disappear…\\n<|2|>Hey… Are you okay!?\\n<|3|>What’s with this guy? Can’t he read the room…?"}\n'
+    )
     ]
 
     def __init__(self, check_groq_key=True):
