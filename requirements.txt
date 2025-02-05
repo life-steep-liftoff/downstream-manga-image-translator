@@ -52,5 +52,3 @@ bitsandbytes
 uvicorn
 fastapi
 pydantic
-paddleocr
-paddlepaddle
