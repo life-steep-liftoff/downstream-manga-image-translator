@@ -52,3 +52,5 @@ bitsandbytes
 uvicorn
 fastapi
 pydantic
+paddleocr
+paddlepaddle-gpu==2.5.2
