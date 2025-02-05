@@ -41,7 +41,7 @@ VALID_LANGUAGES = {
     'ARA': 'Arabic',
 }
 # Whitelists
-VALID_DETECTORS = set(['default', 'ctd'])
+VALID_DETECTORS = set(['default', 'ctd', 'paddle'])
 VALID_DIRECTIONS = set(['auto', 'h', 'v'])
 VALID_TRANSLATORS = [
     'youdao',
