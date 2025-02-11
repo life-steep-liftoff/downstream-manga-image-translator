@@ -42,7 +42,7 @@ class GroqTranslator(CommonTranslator):
     'This engine is designed for manga translation. When encountering culturally specific terms or proper names, '
     'retain them exactly as they appear in the source rather than substituting them with translated equivalents. '
     'For example, do not change "Senpai" to "senior"; keep it as "Senpai". '
-    'When suitable, incorporate an anime-like dialogue style without significantly altering the text length. '
+    'When suitable, incorporate an anime-like dialogue style but do not change the length of the text too much. '
     'Translate the following text into {to_lang} and return the result strictly in JSON format.'
     )
 
