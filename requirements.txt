@@ -28,7 +28,7 @@ websockets
 protobuf
 ctranslate2<=3.24.0 # last version compatible with CUDA 11
 colorama
-openai==1.35.9
+openai==1.61.0
 open_clip_torch
 safetensors
 pandas
