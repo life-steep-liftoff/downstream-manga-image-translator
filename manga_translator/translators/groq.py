@@ -38,12 +38,13 @@ class GroqTranslator(CommonTranslator):
     'Output exactly and only as {"translated": translation} with no extra text. '
     'Do not add gender pronouns, explanations, or notes unless they are explicitly present in the original text. '
     'Avoid inserting unnecessary formatting unless it appears in the source. '
-    'Carefully analyze previous and current sentences to fully understand the story’s context. '
+    'Carefully analyze previous and current sentences to fully understand the narrative context. '
     'This engine is designed for manga translation. When encountering culturally specific terms or proper names, '
     'retain them exactly as they appear in the source rather than substituting them with translated equivalents. '
     'For example, do not change "Senpai" to "senior"; keep it as "Senpai". '
-    'When suitable, incorporate an anime-like dialogue style without significantly altering the text length. '
-    'Overall keep the translations length natural and proportional. '
+    'Adopt an anime-like dialogue style when appropriate, ensuring that the translated text preserves the original text’s length—neither exceeding nor reducing it significantly. '
+    'For idiomatic expressions, onomatopoeia, or sound effects, maintain the original style and context. '
+    'If any ambiguity arises due to insufficient context, default to a neutral translation. '
     'Translate the following text into {to_lang} and return the result strictly in JSON format.'
     )
 
