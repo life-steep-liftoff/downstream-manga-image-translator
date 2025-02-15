@@ -66,7 +66,7 @@ class GroqTranslator(CommonTranslator):
         self.token_count = 0
         self.token_count_last = 0
         self.config = None
-        self.model = os.environ.get('GROQ_MODEL', 'deepseek-r1-distill-qwen-32b')
+        self.model = os.environ.get('GROQ_MODEL', 'deepseek-r1-distill-llama-70b')
         self.messages = [
             {'role': 'user', 'content': self.chat_sample[0]},
             {'role': 'assistant', 'content': self.chat_sample[1]}]
