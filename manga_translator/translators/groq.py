@@ -41,7 +41,7 @@ class GroqTranslator(CommonTranslator):
     'Carefully analyze previous and current sentences to fully understand the narrative context. '
     'This engine is designed for manga translation. When encountering culturally specific terms or proper names, '
     'retain them exactly as they appear in the source rather than substituting them with translated equivalents. '
-    'For example, do not change "Senpai" to "senior". Also, do not convert the honorific "san" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san"). '
+    'For example, do not convert "Senpai" to "senior" or the honorific "さん" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san"). '
     'Adopt an anime-like dialogue style when appropriate, ensuring that the translated text preserves the original text’s length—neither exceeding nor reducing it significantly. '
     'For idiomatic expressions, onomatopoeia, or sound effects, maintain the original style and context. '
     "If any ambiguity arises due to insufficient context, default to a neutral translation and don't just assume genders. "
