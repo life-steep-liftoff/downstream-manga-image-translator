@@ -43,7 +43,8 @@ class GroqTranslator(CommonTranslator):
     'retain them exactly as they appear in the source rather than substituting them with translated equivalents. '
     'For example, do not convert "Senpai" to "senior" or the honorific "さん" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san"). '
     'When suitable, incorporate an anime-like dialogue style without significantly altering the text length. '
-    'If gender is unclear due to lack of context, maintain neutrality rather than assuming. '
+    'For idiomatic expressions, onomatopoeia, or sound effects, translate while maintaining the original intent and feel. '
+    "If gender is unclear due to lack of context, maintain neutrality rather than assuming. "
     'Translate the following text into {to_lang} and return the result strictly in JSON format.'
     )
 
