@@ -91,7 +91,7 @@ class GroqTranslator(CommonTranslator):
 
     @property
     def temperature(self) -> float:
-        return self._config_get('temperature', default=0.4)
+        return self._config_get('temperature', default=0.5)
     
     @property
     def top_p(self) -> float:
