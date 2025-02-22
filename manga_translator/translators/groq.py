@@ -38,7 +38,7 @@ class GroqTranslator(CommonTranslator):
     'Output exactly and only as {"translated": translation} with no extra text. '
     'Do not add gender pronouns, explanations, or notes unless they are explicitly present in the original text. '
     'Avoid inserting unnecessary formatting unless it appears in the source. '
-    'Carefully analyze previous and current sentences to fully understand the narrative context. '
+    'Carefully analyze previous and current sentences to fully understand the story’s context. '
     'This engine is designed for manga translation. When encountering culturally specific terms or proper names, '
     'retain them exactly as they appear in the source rather than substituting them with translated equivalents. '
     'For example, do not convert "Senpai" to "senior" or the honorific "さん" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san"). '
