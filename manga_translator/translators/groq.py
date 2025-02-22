@@ -91,11 +91,11 @@ class GroqTranslator(CommonTranslator):
 
     @property
     def temperature(self) -> float:
-        return self._config_get('temperature', default=0.4)
+        return self._config_get('temperature', default=0)
     
     @property
     def top_p(self) -> float:
-        return self._config_get('top_p', default=0.8)
+        return self._config_get('top_p', default=0.1)
 
     def _format_prompt_log(self, to_lang: str, prompt: str) -> str:
         return '\n'.join([
