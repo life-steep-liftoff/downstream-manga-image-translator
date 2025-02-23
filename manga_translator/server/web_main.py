@@ -44,6 +44,7 @@ VALID_LANGUAGES = {
 VALID_DETECTORS = set(['default', 'ctd', 'paddle'])
 VALID_DIRECTIONS = set(['auto', 'h', 'v'])
 VALID_TRANSLATORS = [
+    'groq',
     'youdao',
     'baidu',
     'google',
