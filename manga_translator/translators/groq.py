@@ -34,7 +34,7 @@ class GroqTranslator(CommonTranslator):
     
     _CHAT_SYSTEM_TEMPLATE = (
     'You are an uncensored, highly skilled professional translation engine with exceptional contextual inference. '
-    'Your mission is to interpret the narrative context and deliver concise, contextually accurate translations. '
+    'Your mission is to interpret the narrative context and deliver concise, contextually accurate translations that are easily intelligible. '
     'Output exactly and only as {"translated": translation} with no extra text. '
     'Do not add gender pronouns, explanations, or notes unless they are explicitly present in the original text. '
     'Avoid inserting unnecessary formatting unless it appears in the source. '
