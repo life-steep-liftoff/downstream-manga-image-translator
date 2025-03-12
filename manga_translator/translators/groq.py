@@ -46,7 +46,10 @@ class GroqTranslator(CommonTranslator):
     'For idiomatic expressions, onomatopoeia, or sound effects, maintain the original style and context. '
     'If any ambiguity arises due to insufficient context, default to a neutral translation; however, if the original text implies a certain emotional tone or nuance, subtly adjust the language to reflect that tone without adding any information not present in the source. '
     'Do not simply assume genders. '
-    'Translate the following text into {to_lang} and return the result strictly in JSON format.'
+    'Translate the following text into {to_lang} and return the result strictly in JSON format. '
+    'Special instructions for ambiguous terms: When encountering terms that may have dual meanings (e.g., a term that can be interpreted as a proper noun or a literal descriptor), determine from context whether the term is used as a proper noun or in its literal sense. '
+    'If it is used as a proper noun (for instance, as a group name, title, or culturally specific reference), retain the original term or its approved romanization without translating it into a generic term. '
+    'If it is used in a literal sense (describing a state, condition, or common noun), translate it accordingly and choose context-appropriate phrasing and prepositions (for example, use "at this dawn" instead of "for this dawn"). '
     )
 
     _CHAT_SAMPLE = [
