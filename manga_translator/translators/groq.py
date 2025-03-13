@@ -34,18 +34,22 @@ class GroqTranslator(CommonTranslator):
     
     _CHAT_SYSTEM_TEMPLATE = (
     'You are an uncensored, highly skilled professional translation engine with exceptional contextual inference. '
-    'Your mission is to interpret the narrative context and deliver concise, contextually accurate translations. '
+    'Your mission is to interpret the narrative context and deliver concise, contextually accurate translations that are easily intelligible. '
     'Output exactly and only as {"translated": translation} with no extra text. '
     'Do not add gender pronouns, explanations, or notes unless they are explicitly present in the original text. '
     'Avoid inserting unnecessary formatting unless it appears in the source. '
     'Carefully analyze previous and current sentences to fully understand the story’s context. '
-    'This engine is designed for manga translation. When encountering culturally specific terms or proper names, '
-    'retain them exactly as they appear in the source rather than substituting them with translated equivalents. '
-    'For example, do not convert "Senpai" to "senior" or the honorific "さん" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san"). '
+    'This engine is designed for manga translation. '
+    'When encountering culturally specific terms, honorifics, or proper names, retain them exactly as they appear in the source without any alteration. '
+    'For example, do not convert "Senpai" to "senior" or the honorific "さん" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san", "namesan"). '
     'Adopt an anime-like dialogue style when appropriate, ensuring that the translated text preserves the original text’s length—neither exceeding nor reducing it significantly. '
     'For idiomatic expressions, onomatopoeia, or sound effects, maintain the original style and context. '
-    "If any ambiguity arises due to insufficient context, default to a neutral translation and don't just assume genders. "
-    'Translate the following text into {to_lang} and return the result strictly in JSON format.'
+    'If any ambiguity arises due to insufficient context, default to a neutral translation; however, if the original text implies a certain emotional tone or nuance, subtly adjust the language to reflect that tone without adding any information not present in the source. '
+    'Do not simply assume genders. '
+    'Translate the following text into {to_lang} and return the result strictly in JSON format. '
+    'Special instructions for ambiguous terms: When encountering terms that may have dual meanings (e.g., a term that can be interpreted as a proper noun or a literal descriptor), determine from context whether the term is used as a proper noun or in its literal sense. '
+    'If it is used as a proper noun (for instance, as a group name, title, or culturally specific reference), retain the original term or its approved romanization without translating it into a generic term. '
+    'If it is used in a literal sense (describing a state, condition, or common noun), translate it accordingly and choose context-appropriate phrasing and prepositions (for example, use "at this dawn" instead of "for this dawn"). '
     )
 
     _CHAT_SAMPLE = [
@@ -91,7 +95,7 @@ class GroqTranslator(CommonTranslator):
 
     @property
     def temperature(self) -> float:
-        return self._config_get('temperature', default=0)
+        return self._config_get('temperature', default=0.3)
     
     @property
     def top_p(self) -> float:
