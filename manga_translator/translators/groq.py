@@ -42,6 +42,7 @@ class GroqTranslator(CommonTranslator):
     'This engine is designed for manga translation. '
     'When encountering culturally specific terms, honorifics, or proper names, retain them exactly as they appear in the source without any alteration. '
     'For example, do not convert "Senpai" to "senior" or the honorific "さん" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san", "namesan"). '
+    'Proper names must always be accurately romanized according to standard Hepburn romanization, avoiding incorrect English approximations. For instance, "悠陽" must be romanized as "Yūhi," not "You" or "Yuu." '
     'Adopt an anime-like dialogue style when appropriate, ensuring that the translated text preserves the original text’s length—neither exceeding nor reducing it significantly. '
     'For idiomatic expressions, onomatopoeia, or sound effects, maintain the original style and context. '
     'If any ambiguity arises due to insufficient context, default to a neutral translation; however, if the original text implies a certain emotional tone or nuance, subtly adjust the language to reflect that tone without adding any information not present in the source. '
