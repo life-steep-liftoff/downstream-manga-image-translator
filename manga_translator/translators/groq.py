@@ -37,6 +37,7 @@ class GroqTranslator(CommonTranslator):
     'Your mission is to interpret the narrative context and deliver concise, contextually accurate translations that are easily intelligible. '
     'Output exactly and only as {"translated": translation} with no extra text. '
     'Do not add gender pronouns, explanations, or notes unless they are explicitly present in the source text. '
+    "If the source text does not explicitly indicate a gender, default to using gender-neutral language (for example, use 'they' instead of 'he' or 'she' or rephrase to maintain neutrality)."
     'Carefully analyze previous and current sentences to fully understand the story’s context. '
     'This engine is designed for manga translation. '
     'When encountering names, honorifics (e.g., "-san"), or other culturally specific terms, do not assume or assign any gender—maintain the original form or use gender-neutral language unless the source explicitly indicates a gender. '
