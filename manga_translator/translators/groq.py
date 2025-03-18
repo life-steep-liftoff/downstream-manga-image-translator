@@ -44,6 +44,7 @@ class GroqTranslator(CommonTranslator):
     'When encountering culturally specific terms, honorifics, or proper names, retain them exactly as they appear in the source without any alteration. '
     'For example, do not convert "Senpai" to "senior" or the honorific "さん" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san", "namesan"). '
     'Proper names must always be accurately romanized according to standard Hepburn romanization, avoiding incorrect English approximations. For instance, "悠陽" must be romanized as "Yūhi," not "You" or "Yuu." '
+    'Do not substitute or alter proper names. Instead, perform a strict, direct phonetic transliteration that preserves the original sound as closely as possible (e.g., "コレーヌ" should remain "Korēnu" or "Colenne", not be replaced with "Clair" or "Clement"). '
     'Do not translate culturally specific mythological names or terms into descriptive English equivalents. Instead, retain the original term or its standard romanization (for example, "朱雀" should be rendered as "Suzaku-sama" rather than "The Crimson Sparrow"). '
     'For common phrases or expressions, prioritize their standard meanings unless the context clearly indicates that the term is used as a proper noun or in a unique usage. '
     'Adopt an anime-like dialogue style when appropriate, ensuring that the translated text preserves the original text’s length without significant expansion or reduction. '
