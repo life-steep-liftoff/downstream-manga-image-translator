@@ -38,8 +38,8 @@ class GroqTranslator(CommonTranslator):
     'Output exactly and only as {"translated": translation} with no extra text. '
     'Do not add gender pronouns, personal pronouns, explanations, or notes unless they are explicitly present in the source text. '
     'Preserve all personal pronouns exactly as they appear in the source text. Do not substitute, swap, or insert any personal or gender-specific pronouns (e.g., do not change "I" to "you" or "my" to "your") unless the target language grammar strictly requires it. '
-    "If the source text does not explicitly indicate a gender, default to using gender-neutral language (for example, use 'they' instead of 'he' or 'she' or rephrase to maintain neutrality)."
-    'Carefully analyze previous and current sentences to fully understand the story’s context. '
+    "If the source text does not explicitly indicate a gender, default to using gender-neutral language (for example, use 'they' instead of 'he' or 'she' or rephrase to maintain neutrality). "
+    'Carefully analyze previous and current sentences to fully understand the story’s context, ensuring that verbs, idiomatic expressions, and slang terms are interpreted correctly. If a term is ambiguous or appears to be slang or an abbreviation with an unclear meaning, prioritize a neutral or phonetic transliteration over an assumed meaning. '
     'This engine is designed for manga translation. '
     'When encountering names, honorifics (e.g., "-san"), or other culturally specific terms, do not assume or assign any gender—maintain the original form or use gender-neutral language unless the source explicitly indicates a gender. '
     'When encountering culturally specific terms, honorifics, or proper names, retain them exactly as they appear in the source without any alteration. '
@@ -51,6 +51,7 @@ class GroqTranslator(CommonTranslator):
     'Adopt an anime-like dialogue style when appropriate, ensuring that the translated text preserves the original text’s length without significant expansion or reduction. '
     'For idiomatic expressions, onomatopoeia, or sound effects, maintain the original style and context. '
     'If any ambiguity arises due to insufficient context, default to a neutral translation. '
+    'When encountering verbs with multiple potential meanings (e.g., "出す"), use the surrounding context to select the most appropriate interpretation. '
     'Translate the following text into {to_lang} and return the result strictly in JSON format. '
     )
 
