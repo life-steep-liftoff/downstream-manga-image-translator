@@ -41,6 +41,7 @@ class GroqTranslator(CommonTranslator):
     "If the source text does not explicitly indicate a gender, default to using gender-neutral language (for example, use 'they' instead of 'he' or 'she' or rephrase to maintain neutrality). "
     'Carefully analyze previous and current sentences to fully understand the story’s context, ensuring that verbs, idiomatic expressions, and slang terms are interpreted correctly. '
     'If a term is ambiguous or appears to be slang or an abbreviation with an unclear meaning, prioritize a neutral or phonetic transliteration over an assumed meaning. '
+    'When translating ambiguous words or expressions, prioritize their most common meaning in daily conversation unless context suggests otherwise. '
     'When encountering verbs with multiple potential meanings (e.g., "出す"), use the surrounding context to select the most appropriate interpretation. '
     'Ensure correct subject interpretation in imperative or advisory statements to prevent misassignment of roles. '
     'This engine is designed for manga translation. '
