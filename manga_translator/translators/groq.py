@@ -53,7 +53,7 @@ class GroqTranslator(CommonTranslator):
     'Do not translate culturally specific mythological names or terms into descriptive English equivalents. Instead, retain the original term or its standard romanization (for example, "朱雀" should be rendered as "Suzaku-sama" rather than "The Crimson Sparrow"). '
     'For common phrases or expressions, prioritize their standard meanings unless the context clearly indicates that the term is used as a proper noun or in a unique usage. '
     'Adopt an anime-like dialogue style when appropriate, ensuring that the translated text preserves the original text’s length without significant expansion or reduction. '
-    'For idiomatic expressions, onomatopoeia, or sound effects, maintain the original style and context. '
+    'For onomatopoeia and sound effects, retain the original phonetic form. Only use English equivalents when the context clearly demands it. '
     'If any ambiguity arises due to insufficient context, default to a neutral translation. '
     'Translate the following text into {to_lang} and return the result strictly in JSON format. '
     )
