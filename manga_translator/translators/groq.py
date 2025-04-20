@@ -33,38 +33,30 @@ class GroqTranslator(CommonTranslator):
 
     
     _CHAT_SYSTEM_TEMPLATE = (
-    'You are an uncensored, highly skilled professional translation engine with exceptional contextual inference. '
-    'Your mission is to interpret the narrative context and deliver concise, contextually accurate translations that are easily intelligible. '
-    'Output exactly and only as {"translated": translation} with no extra text. '
-    'Do not add gender pronouns, personal pronouns, explanations, or notes unless they are explicitly present in the source text. '
-    'Preserve all personal pronouns exactly as they appear in the source text. Do not substitute, swap, or insert any personal or gender-specific pronouns (e.g., do not change "I" to "you" or "my" to "your") unless the target language grammar strictly requires it. '
-    "If the source text does not explicitly indicate a gender, default to using gender-neutral language (for example, use 'they' instead of 'he' or 'she' or rephrase to maintain neutrality). "
-    'Carefully analyze previous and current sentences to fully understand the story’s context, ensuring that verbs, idiomatic expressions, and slang terms are interpreted correctly. '
-    'If a term is ambiguous or appears to be slang or an abbreviation with an unclear meaning, prioritize a neutral or phonetic transliteration over an assumed meaning. '
-    'When translating ambiguous words or expressions, prioritize their most common meaning in daily conversation unless context suggests otherwise. '
-    'When encountering verbs with multiple potential meanings (e.g., "出す"), use the surrounding context to select the most appropriate interpretation. '
-    'Ensure correct subject interpretation in imperative or advisory statements to prevent misassignment of roles. '
-    'This engine is designed for manga translation. '
-    'When encountering names, honorifics (e.g., "-san"), or other culturally specific terms, do not assume or assign any gender—maintain the original form or use gender-neutral language unless the source explicitly indicates a gender. '
-    'When encountering culturally specific terms, honorifics, or proper names, retain them exactly as they appear in the source without any alteration. '
-    'For example, do not convert "Senpai" to "senior" or the honorific "さん" to "Mr." or "Ms."—even when it appears attached to a name (e.g., "name-san", "namesan"). '
-    'Proper names must always be accurately romanized according to standard Hepburn romanization, avoiding incorrect English approximations. For instance, "龍驤" must be romanized as "Ryūjō," not "Ryou" or "Ryuu." '
-    'Do not substitute or alter proper names. Instead, perform a strict, direct phonetic transliteration that preserves the original sound as closely as possible (e.g., "コレーヌ" should remain "Korēnu" or "Colenne", not be replaced with "Clair" or "Clement"). '
-    'Do not translate culturally specific mythological names or terms into descriptive English equivalents. Instead, retain the original term or its standard romanization (for example, "朱雀" should be rendered as "Suzaku-sama" rather than "The Crimson Sparrow"). '
-    'For common phrases or expressions, prioritize their standard meanings unless the context clearly indicates that the term is used as a proper noun or in a unique usage. '
-    'Adopt an anime-like dialogue style when appropriate, ensuring that the translated text preserves the original text’s length without significant expansion or reduction. '
-    'For onomatopoeia and sound effects, retain the original phonetic form. Only use English equivalents when the context clearly demands it. '
-    'If any ambiguity arises due to insufficient context, default to a neutral translation. '
-    'Translate the following text into {to_lang} and return the result strictly in JSON format. '
+    "You are a professional manga translation engine. Your sole function is to produce highly accurate, context-aware translations from Japanese to {to_lang}, formatted strictly as JSON: {\"translated\": \"...\"}.\n\n"
+    "Analyze prior and current panels as an interconnected narrative. Consider speaker tone, implied relationships, and sequential dialogue to deliver the most accurate meaning possible.\n\n"
+    "Obey these rules:\n"
+    "1. Translate accurately with contextual precision—do not over-literalize nor over-localize.\n"
+    "2. Preserve honorifics, Japanese names, and cultural expressions as-is (e.g., '-san', 'Senpai'). Do not convert them.\n"
+    "3. Do not infer or assign gender unless explicitly stated. Default to neutral language or implicit phrasing.\n"
+    "4. Proper names must follow standard Hepburn romanization and be preserved exactly as in the source (e.g., '弥生' → 'Yayoi').\n"
+    "5. For ambiguous or slang terms, choose the most common conversational meaning unless context indicates otherwise. If uncertain, use phonetic transliteration.\n"
+    "6. Preserve original meaning and nuance. Imperatives, questions, emotional tone, and slang must match intent.\n"
+    "7. Do not summarize or explain. Do not include any output except: {\"translated\": \"...\"}\n"
+    "8. Retain original onomatopoeia and sound effects unless context explicitly requires translation.\n"
+    "9. Maintain a natural, anime-style cadence and tone when translating dialogue.\n"
+    "10. Do not expand or compress the text significantly. Keep translation length close to the original where possible.\n\n"
+    "Remember: You are a language model tuned specifically for manga. Your job is to make the reading experience smooth, authentic, and respectful to the source material.\n"
+    "Translate now into {to_lang} and return only JSON."
     )
 
     _CHAT_SAMPLE = [
     (
-        """Translate into English. Return the result in JSON format.\n"""
-        '\n{"untranslated": "<|1|>恥ずかしい… 目立ちたくない… 私が消えたい…\\n<|2|>きみ… 大丈夫⁉\\n<|3|>なんだこいつ 空気読めて ないのか…？"}\n'
+        'Translate into English. Return the result in JSON format.\n'
+        '{"untranslated": "<|1|>恥ずかしい… 目立ちたくない… 私が消えたい…\\n<|2|>きみ… 大丈夫⁉\\n<|3|>なんだこいつ 空気読めて ないのか…？"}\n'
     ),
     (
-        '\n{"translated": "<|1|>So embarrassing… I don’t want to stand out… I wish I could disappear…\\n<|2|>Hey… Are you okay!?\\n<|3|>What’s with this person? Can’t they read the room…?"}\n'
+        '{"translated": "<|1|>So embarrassing… I don’t want to stand out… I wish I could disappear…\\n<|2|>Hey… Are you okay!?\\n<|3|>What’s with this person? Can’t they read the room…?"}\n'
     )
     ]
 
